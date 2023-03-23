@@ -11,6 +11,7 @@ body {
   background: #fff;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
+  position: relative;
 }
 body {
   display: flex;
@@ -70,8 +71,15 @@ button {
   max-width: 177px;
   width: 100%;
   padding: 14px;
-  background: #a5d364;
+  background: #9dd558;
   border-radius: 110px;
+  transition: all 0.6s;
+  &:hover {
+    background: lighten(#9dd558, 5%);
+  }
+  &:active {
+    background: darken(#9dd558, 5%);
+  }
 }
 
 .container {
