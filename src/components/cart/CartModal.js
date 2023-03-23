@@ -3,6 +3,7 @@ import arrow from '../../assets/icon/arrow-right.svg';
 import { closeCart } from '../../shop/reducers/cartReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import CartItem from './CartItem';
+import { getSumPrices } from '../../tools/tool';
 
 function CartModal() {
   const dispatch = useDispatch();
@@ -10,13 +11,8 @@ function CartModal() {
   const orderedSupplices = useSelector(({ cards }) =>
     cards.filter((card) => card.isAdded).sort((a, b) => a.id - b.id)
   );
-  
-  const totalSum = useSelector(({ cards }) =>
-    cards
-      .filter((card) => card.isAdded)
-      .map((card) => card.price)
-      .reduce((sum, price) => sum + price, 0)
-  );
+
+  const totalSum = useSelector(({ cards }) => getSumPrices(cards));
 
   return (
     <div className="cartModal">

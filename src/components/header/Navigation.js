@@ -1,16 +1,12 @@
 import sprite from '../../assets/sprite.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { openCart } from '../../shop/reducers/cartReducer';
+import { getSumPrices } from '../../tools/tool';
 
 const Navigation = ({ isVisible }) => {
   const dispatcher = useDispatch();
 
-  const totalSum = useSelector(({ cards }) =>
-    cards
-      .filter((card) => card.isAdded)
-      .map((card) => card.price)
-      .reduce((sum, price) => sum + price, 0)
-  );
+  const totalSum = useSelector(({ cards }) => getSumPrices(cards));
 
   return (
     <div className={`header-nav ${isVisible && 'active'}`}>
