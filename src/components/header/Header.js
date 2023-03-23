@@ -15,8 +15,8 @@ const Header = () => {
     <div className="container">
       <div className="header">
         <div className="header-item">
-          <a className="header-item__logo" href="#">
-            <img src={logo}></img>
+          <a className="header-item__logo" href="#header">
+            <img src={logo} alt="logo"></img>
           </a>
           <div className="header-item__inner">
             <h3 className="header-item__title">REACT SNEAKERS</h3>

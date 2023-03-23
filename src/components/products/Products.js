@@ -5,10 +5,8 @@ import ProdSearch from '../products/ProdSearch';
 const Products = () => {
   const cards = useSelector((state) => state.cards);
   const searchText = useSelector((state) => state.search.text);
-  const liked = useSelector((state) => state.liked.liked);
 
   const filteredCards = cards
-    .filter((card) => (liked ? card.isLiked : true))
     .filter((card) => card.description.toLowerCase().includes(searchText))
     .sort((a, b) => a.id - b.id)
     .map((card) => {

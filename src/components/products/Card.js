@@ -18,6 +18,7 @@ const Card = ({ isLiked, id, isAdded, description, price }) => {
       <img
         className="card-img"
         src={require(`../../assets/products/card-${id}.jpg`)}
+        alt="card-img"
       ></img>
       <div className="card-desc">{description}</div>
       <div className="card-price">
@@ -37,10 +38,4 @@ const Card = ({ isLiked, id, isAdded, description, price }) => {
 };
 export default Card;
 
-// <svg class="icon">
-//   <use xlink:href="#plus"></use>
-// </svg><svg class="icon">
-//   <use xlink:href="#check"></use>
-// </svg><svg class="icon">
-//   <use xlink:href="#heart"></use>
-// </svg>
+

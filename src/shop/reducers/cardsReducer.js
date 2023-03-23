@@ -17,12 +17,18 @@ const cardsSlice = createSlice({
       currentCard.isAdded = !currentCard.isAdded;
       state = [...state.filter((card) => card.id !== cardId), currentCard];
     },
+    removeFromCart(state, action) {
+      const cardId = action.payload;
+      const currentCard = state.find((card) => card.id === cardId);
+      currentCard.isAdded = false;
+      state = [...state.filter((card) => card.id !== cardId), currentCard];
+    },
     resetAddedCard(state) {
       state = state.map((card) => (card.isAdded = false));
     },
   },
 });
 
-export const { likedCard, addToCart, resetAddedCard, search } =
+export const { likedCard, addToCart, resetAddedCard, removeFromCart, search } =
   cardsSlice.actions;
 export default cardsSlice.reducer;
