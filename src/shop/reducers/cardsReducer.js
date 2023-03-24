@@ -1,34 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
-import sneakers from '../../assets/cards.json';
 
 const cardsSlice = createSlice({
   name: 'cards',
-  initialState: sneakers,
+  initialState: [],
   reducers: {
-    likedCard(state, action) {
-      const likedId = action.payload;
-      const currentCard = state.find((card) => card.id === likedId);
-      currentCard.isLiked = !currentCard.isLiked;
-      state = [...state.filter((card) => card.id !== likedId), currentCard];
+    setCards(state, action) {
+      state.push(
+        ...action.payload.map((card) => ({
+          ...card,
+          isLiked: false,
+          isFavorite: false,
+        }))
+      );
     },
-    addToCart(state, action) {
-      const cardId = action.payload;
-      const currentCard = state.find((card) => card.id === cardId);
-      currentCard.isAdded = !currentCard.isAdded;
-      state = [...state.filter((card) => card.id !== cardId), currentCard];
-    },
-    removeFromCart(state, action) {
-      const cardId = action.payload;
-      const currentCard = state.find((card) => card.id === cardId);
-      currentCard.isAdded = false;
-      state = [...state.filter((card) => card.id !== cardId), currentCard];
-    },
-    resetAddedCard(state) {
-      state = state.map((card) => (card.isAdded = false));
+    setLiked(state, action) {
+      const numOfCard = state.findIndex((card) => card.id === action.payload);
+      state[numOfCard].isLiked = !state[numOfCard].isLiked;
     },
   },
 });
 
-export const { likedCard, addToCart, resetAddedCard, removeFromCart, search } =
-  cardsSlice.actions;
+export const { setCards, setLiked } = cardsSlice.actions;
 export default cardsSlice.reducer;

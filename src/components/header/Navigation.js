@@ -1,11 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { openCart } from '../../shop/reducers/cartReducer';
-import { getSumPrices } from '../../tools/tool';
 
 const Navigation = () => {
   const dispatcher = useDispatch();
-
-  const totalSum = useSelector(({ cards }) => getSumPrices(cards));
 
   return (
     <div className="header-nav">
@@ -16,7 +13,7 @@ const Navigation = () => {
         <svg className="icon">
           <use href="images/sprite.svg#cart"></use>
         </svg>
-        <span>${totalSum.toFixed(2)}</span>
+        <span>${1299}</span>
       </button>
       <button className="header-nav__icon">
         <svg className="icon">

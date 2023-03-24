@@ -5,14 +5,14 @@ const CartEmpty = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="cartModal-state">
+    <div className="cartModal__state">
       <img
-        className="cartModal-state__img"
+        className="cartModal__state__img"
         src="images/box-img.png"
         alt="box pic"
       ></img>
-      <h4 className="cartModal-state__-title">Корзина пустая</h4>
-      <div className="cartModal-state__-text">
+      <h4 className="cartModal__state__title">Корзина пустая</h4>
+      <div className="cartModal__state__text">
         Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
       </div>
       <button
