@@ -1,5 +1,3 @@
-import spriteCard from '../../assets/sprite-card.svg';
-import arrow from '../../assets/icon/arrow-right.svg';
 import { closeCart } from '../../shop/reducers/cartReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import CartItem from './CartItem';
@@ -20,7 +18,7 @@ function CartModal() {
         <div className="cartModal-title">
           Корзина
           <svg onClick={() => dispatch(closeCart())} className="icon">
-            <use href={spriteCard + '#close'}></use>
+            <use href="images/sprite-card.svg#close"></use>
           </svg>
         </div>
         <div className="cartModal-products">
@@ -45,7 +43,11 @@ function CartModal() {
           </div>
           <button className="cartModal-bottom__btn btn">
             Оформить заказ
-            <img className="arrow" src={arrow} alt="arrow-icon"></img>
+            <img
+              className="arrow"
+              src="images/icon/arrow-right.svg"
+              alt="arrow-icon"
+            ></img>
           </button>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { likedCard, addToCart } from '../../shop/reducers/cardsReducer';
-import spriteCard from '../../assets/sprite-card.svg';
 
 const Card = ({ isLiked, id, isAdded, description, price }) => {
   const dispatch = useDispatch();
@@ -12,12 +11,12 @@ const Card = ({ isLiked, id, isAdded, description, price }) => {
         className={`card-icon like ${isLiked && 'like--active'}`}
       >
         <svg className="icon">
-          <use href={spriteCard + '#heart'}></use>
+          <use href="images/sprite-card.svg#heart"></use>
         </svg>
       </button>
       <img
         className="card-img"
-        src={require(`../../assets/products/card-${id}.jpg`)}
+        src={`images/products/card-${id}.jpg`}
         alt="card-img"
       ></img>
       <div className="card-desc">{description}</div>
@@ -30,12 +29,12 @@ const Card = ({ isLiked, id, isAdded, description, price }) => {
         className={`card-icon ${isAdded ? 'check' : 'add'}`}
       >
         <svg className="icon">
-          <use href={`${spriteCard}#${isAdded ? 'check' : 'plus'}`}></use>
+          <use
+            href={`images/sprite-card.svg#${isAdded ? 'check' : 'plus'}`}
+          ></use>
         </svg>
       </button>
     </div>
   );
 };
 export default Card;
-
-

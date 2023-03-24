@@ -1,4 +1,3 @@
-import spriteCard from '../../assets/sprite-card.svg';
 import { removeFromCart } from '../../shop/reducers/cardsReducer';
 import { useDispatch } from 'react-redux';
 
@@ -9,7 +8,7 @@ const CartItem = ({ id, description, price }) => {
     <div className="cartModal-prod">
       <img
         className="cartModal-prod__img"
-        src={require(`../../assets/products/card-${id}.jpg`)}
+        src={`images/products/card-${id}.jpg`}
         alt="card-img"
       ></img>
       <div className="cartModal-prod__info">
@@ -21,7 +20,7 @@ const CartItem = ({ id, description, price }) => {
         className="cartModal-prod__close"
       >
         <svg className="icon">
-          <use href={spriteCard + '#close'}></use>
+          <use href="images/sprite-card.svg#close"></use>
         </svg>
       </button>
     </div>

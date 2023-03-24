@@ -1,4 +1,3 @@
-import sprite from '../../assets/sprite.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { openCart } from '../../shop/reducers/cartReducer';
 import { getSumPrices } from '../../tools/tool';
@@ -15,18 +14,18 @@ const Navigation = ({ isVisible }) => {
         className="header-nav__icon"
       >
         <svg className="icon">
-          <use href={sprite + '#cart'}></use>
+          <use href="images/sprite.svg#cart"></use>
         </svg>
         <span>${totalSum.toFixed(2)}</span>
       </button>
       <button className="header-nav__icon">
         <svg className="icon">
-          <use href={sprite + '#favorite'}></use>
+          <use href="images/sprite.svg#favorite"></use>
         </svg>
       </button>
       <button className="header-nav__icon">
         <svg className="icon">
-          <use href={sprite + '#user'}></use>
+          <use href="images/sprite.svg#user"></use>
         </svg>
       </button>
     </div>

@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { searchByDescription } from '../../shop/reducers/searchReducer';
-import sprite from '../../assets/sprite.svg';
 
 const ProdSearch = () => {
   const dispatch = useDispatch();
@@ -13,7 +12,7 @@ const ProdSearch = () => {
   return (
     <div className="productSearch">
       <svg className="icon">
-        <use href={sprite + '#search'}></use>
+        <use href="images/sprite.svg#search"></use>
       </svg>
       <input
         onChange={searchHandler}

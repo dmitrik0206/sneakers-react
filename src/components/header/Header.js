@@ -1,6 +1,4 @@
-import logo from '../../assets/logo.png';
 import { BiMenu } from 'react-icons/bi';
-
 import Navigation from './Navigation';
 import { useState } from 'react';
 
@@ -16,7 +14,7 @@ const Header = () => {
       <div className="header">
         <div className="header-item">
           <a className="header-item__logo" href="#header">
-            <img src={logo} alt="logo"></img>
+            <img src="images/logo.png" alt="logo"></img>
           </a>
           <div className="header-item__inner">
             <h3 className="header-item__title">REACT SNEAKERS</h3>
