@@ -2,13 +2,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { openCart } from '../../shop/reducers/cartReducer';
 import { getSumPrices } from '../../tools/tool';
 
-const Navigation = ({ isVisible }) => {
+const Navigation = () => {
   const dispatcher = useDispatch();
 
   const totalSum = useSelector(({ cards }) => getSumPrices(cards));
 
   return (
-    <div className={`header-nav ${isVisible && 'active'}`}>
+    <div className="header-nav">
       <button
         onClick={() => dispatcher(openCart())}
         className="header-nav__icon"

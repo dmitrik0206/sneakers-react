@@ -7,8 +7,11 @@ const searchSlice = createSlice({
     searchByDescription(state, action) {
       state.text = action.payload;
     },
+    resetSearch(state) {
+      state.text = '';
+    },
   },
 });
 
-export const { searchByDescription } = searchSlice.actions;
+export const { searchByDescription, resetSearch } = searchSlice.actions;
 export default searchSlice.reducer;

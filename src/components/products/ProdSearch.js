@@ -4,21 +4,16 @@ import { searchByDescription } from '../../shop/reducers/searchReducer';
 const ProdSearch = () => {
   const dispatch = useDispatch();
 
-  const searchHandler = (event) => {
-    const text = event.target.value.toLowerCase();
-    dispatch(searchByDescription(text));
-  };
-
   return (
     <div className="productSearch">
       <svg className="icon">
         <use href="images/sprite.svg#search"></use>
       </svg>
       <input
-        onChange={searchHandler}
+        onChange={(e) => dispatch(searchByDescription(e.target.value))}
         className="productSearch-input"
         placeholder="Поиск..."
-      ></input>
+      />
     </div>
   );
 };

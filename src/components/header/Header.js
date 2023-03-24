@@ -1,14 +1,6 @@
-import { BiMenu } from 'react-icons/bi';
 import Navigation from './Navigation';
-import { useState } from 'react';
 
 const Header = () => {
-  const [isVisibleNav, setIsVisibleNav] = useState(false);
-
-  const navToggleHandler = () => {
-    setIsVisibleNav((state) => !state);
-  };
-
   return (
     <div className="container">
       <div className="header">
@@ -21,10 +13,7 @@ const Header = () => {
             <p className="header-item__text">Магазин лучших кроссовок</p>
           </div>
         </div>
-        <Navigation isVisible={isVisibleNav} />
-        <button onClick={navToggleHandler} className="header-burger">
-          <BiMenu className="header-burger__icon" />
-        </button>
+        <Navigation />
       </div>
     </div>
   );
