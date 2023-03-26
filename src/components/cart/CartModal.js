@@ -1,9 +1,12 @@
 import { closeCart } from '../../shop/reducers/cartReducer';
 import { useDispatch } from 'react-redux';
 import CartInfo from './CartInfo';
+import useGetFavorite from '../../hooks/useGetFavorite'
+import CartEmpty from './CartEmpty'
 
 function CartModal() {
   const dispatch = useDispatch();
+  const favLength = useGetFavorite().length;
 
   return (
     <div className="cartModal">
@@ -14,7 +17,7 @@ function CartModal() {
             <use href="images/sprite-card.svg#close"></use>
           </svg>
         </div>
-        <CartInfo />
+        {favLength ? <CartInfo /> : <CartEmpty/>}
       </div>
     </div>
   );
