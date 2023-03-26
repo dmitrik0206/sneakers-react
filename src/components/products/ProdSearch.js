@@ -4,6 +4,8 @@ import { searchInDescription } from '../../shop/reducers/searchReducer';
 const ProdSearch = () => {
   const dispatch = useDispatch();
 
+  
+
   return (
     <div className="productSearch">
       <svg className="icon">
