@@ -1,10 +1,7 @@
-import { useDispatch } from 'react-redux';
-import { searchInDescription } from '../../shop/reducers/searchReducer';
+import useTimeoutOnSearch from '../../hooks/useTimeoutOnSearch';
 
 const ProdSearch = () => {
-  const dispatch = useDispatch();
-
-  
+  const [textValue, onChangeHandler] = useTimeoutOnSearch(500);
 
   return (
     <div className="productSearch">
@@ -13,7 +10,8 @@ const ProdSearch = () => {
       </svg>
       <input
         maxLength={12}
-        onChange={(e) => dispatch(searchInDescription(e.target.value))}
+        value={textValue}
+        onChange={onChangeHandler}
         className="productSearch-input"
         placeholder="Поиск..."
       />
