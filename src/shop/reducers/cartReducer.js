@@ -9,7 +9,7 @@ const cartSlice = createSlice({
     },
     closeCart(state) {
       state.isVisible = false;
-    }
+    },
   },
 });
 

@@ -1,10 +1,9 @@
 import Card from '../products/Card';
 import ProdSearch from '../products/ProdSearch';
-import { useSelector } from 'react-redux';
+import useGetFilteredCards from '../../hooks/useGetFilteredCards';
 
 const Products = () => {
-  const cards = useSelector(({ cards }) => cards);
-
+  const [cards, searchText] = useGetFilteredCards();
   const filteredCards = cards.map((card) => <Card key={card.id} {...card} />);
 
   return (
@@ -12,7 +11,7 @@ const Products = () => {
       <div className="products">
         <div className="products-top">
           <h2 className="products-top__title">
-            {'' ? `Поиск по шаблону: ""` : 'Все кроссовки'}
+            {searchText ? `Поиск по шаблону: "${searchText}"` : 'Все кроссовки'}
           </h2>
           <ProdSearch />
         </div>

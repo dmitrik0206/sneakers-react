@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setLiked } from '../../shop/reducers/cardsReducer';
+import { setLiked, setFavorite } from '../../shop/reducers/cardsReducer';
 
 const Card = ({ id, isLiked, isFavorite, description, price }) => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const Card = ({ id, isLiked, isFavorite, description, price }) => {
         <span>${price}</span>
       </div>
       <button
-        onClick={() => console.log()}
+        onClick={() => dispatch(setFavorite(id))}
         className={`card-icon ${isFavorite ? 'check' : 'add'}`}
       >
         <svg className="icon">

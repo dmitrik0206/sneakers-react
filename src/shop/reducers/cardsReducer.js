@@ -17,8 +17,16 @@ const cardsSlice = createSlice({
       const numOfCard = state.findIndex((card) => card.id === action.payload);
       state[numOfCard].isLiked = !state[numOfCard].isLiked;
     },
+    setFavorite(state, action) {
+      const numOfCard = state.findIndex((card) => card.id === action.payload);
+      state[numOfCard].isFavorite = !state[numOfCard].isFavorite;
+    },
+    removeFavorite(state, action) {
+      const numOfCard = state.findIndex((card) => card.id === action.payload);
+      state[numOfCard].isFavorite = false;
+    },
   },
 });
 
-export const { setCards, setLiked } = cardsSlice.actions;
+export const { setCards, setLiked, setFavorite, removeFavorite } = cardsSlice.actions;
 export default cardsSlice.reducer;
